@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="row">
+
+           <div class="col-md-6 offset-md-3">
+
+                <div class="jumbotron">
+                    <h1 class="display-5">{{ post.title }}</h1><br>
+                    {% if post.picture %}
+                        <img src="{{ post.picture.url}}" style="height: 280px; width: 440px; margin-left: 100px">
+                    {% endif %}
+                   <hr class="my-4">
+                   <p class="lead">{{ post.information|linebreaks }}</p>
+                    Добавлено: {{ post.timestamp|date:"SHORT_DATE_FORMAT" }}
+                </div>
+
+           </div>
+
+    </div>
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="row">
+        <div class="col-xs-12 col-sm-8 col-md-6 col-lg-6 ml-auto mr-auto" >
+            <form method="post"> {% csrf_token %}
+                <div class="col-xs-12 col-sm-8 col-md-6 col-lg-6 offset-lg-4 ml-auto mr-auto">
+                <h1>Регистрация</h1>
+                </div>
+                {{ form }}<br>
+                <div class="col-xs-12 col-sm-8 col-md-6 col-lg-6 offset-lg-4 ml-auto mr-auto">
+                <button type="submit" class="btn btn-success" style="margin-left: 20px">Зарегистрироваться</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

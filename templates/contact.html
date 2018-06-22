@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <div class="text-center">
+        <h1>Тут будет информация о нас</h1>
+        <h2>А тут будут наши контакты</h2>
+    </div>
+    <div class="col-2-md ">
+        <form class="contact-form" method="post" action="{% url 'contact' %}"> {% csrf_token %}
+{#            <input type="text" class="form-control" placeholder="Ваше имя" name="fullname">#}
+{#            <input type="email" class="form-control" placeholder="Ваша почта" name="email">#}
+            {{ form }}<br>
+            <button type="submit" class="btn btn-success">Отправить</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

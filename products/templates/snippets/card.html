@@ -1,0 +1,18 @@
+
+{#<div class="card-deck">#}
+    <div class="card border-info mb-3" style="width: 18rem;">
+      {% if instance.image %}
+          <a href="{{ instance.get_absolute_url }}">
+            <img class="card-img-top" src="{{ instance.image.url }}" alt="{{ instance.title }} logo ">
+          </a>
+      {% endif %}
+        <div class="card-body">
+        <h5 class="card-title">{{ instance.title }}</h5>
+        <p class="card-text">{{ instance.description| truncatewords:14}}</p>
+        <a href="{{ instance.get_absolute_url }}" class="btn btn-primary">Подробнее</a>
+            {% include 'snippets/cart_update.html' with product=instance cart=cart %}
+{#            <a href="{% url 'detail' %}" class="btn btn-warning">Подробнее</a>#}
+
+      </div>
+    </div>
+{#</div>#}

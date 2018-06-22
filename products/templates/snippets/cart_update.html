@@ -1,0 +1,13 @@
+
+
+<form class="form-product-ajax" method="POST" action="{% url 'cart:cart_update' %}" data-endpoint="{% url 'cart:cart_update' %}">{% csrf_token %}
+
+    <input type="hidden" name="product" value="{{ product.id }}">
+        <span class="submit-span">
+          {% if product in cart.products.all %}
+              В корзине <button type="submit" class="btn btn-danger">Убрать?</button>
+          {% else %}
+              <button type="submit" class="btn btn-success">Добавить в корзину</button>
+          {% endif %}
+        </span>
+</form>

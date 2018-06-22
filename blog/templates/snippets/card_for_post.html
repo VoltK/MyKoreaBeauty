@@ -1,0 +1,15 @@
+
+{#<div class="card-deck">#}
+    <div class="card border-info mb-3" style="width: 18rem;">
+      {% if instance.picture %}
+          <a href="{{ instance.get_absolute_url }}">
+            <img class="card-img-top" src="{{ instance.picture.url }}" alt="{{ instance.title }} logo ">
+          </a>
+      {% endif %}
+        <div class="card-body">
+            <h5 class="card-title">{{ instance.title }}</h5>
+            <p class="card-text">{{ instance.information| truncatewords:14}}</p>
+            <a href="{{ instance.get_absolute_url }}" class="btn btn-primary">Подробнее</a>
+        </div>
+    </div>
+{#</div>#}

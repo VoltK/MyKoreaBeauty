@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if not billing_profile %}
+        <div class="row text-center">
+            <div class="col-12 col-md-6">
+                <p class="lead">Login</p>
+                {% include 'accounts/snippets/form.html' with form=login_form  next_url=request.build_absolute_uri %}
+            </div>
+            <div class="col-12 col-md-6">
+                <p class="lead">Continue as Guest</p>
+                {% url 'guest_register' as guest_register_url %}
+                {% include 'accounts/snippets/form.html' with form=guest_form  next_url=request.build_absolute_uri action_url=guest_register_url %}
+            </div>
+        </div>
+    {% else %}
+        {% if not order.shipping_address %}
+
+         <div class='row'>
+            <<div class='col-md-6 mx-auto col-10'>
+                <p>Номер вашего заказа: {{ order.order_id }}</p>
+                <p class='lead'>Адрес доставки</p>
+                <hr/>
+            {% url "checkout_address_create" as checkout_address_create %}
+            {% include 'addresses/form.html' with form=address_form next_url=request.build_absolute_uri action_url=checkout_address_create address_type='shipping' %}
+            </div>
+             {% url 'checkout_address_reuse' as checkout_address_reuse %}
+             {% include 'addresses/prev_addresses.html' with address_qs=address_qs next_url=request.build_absolute_uri address_type='shipping' action_url=checkout_address_reuse %}
+         </div>
+
+
+        {% elif not order.billing_address %}
+        <div class='row'>
+            <div class='col-md-6 mx-auto col-10'>
+                <p class='lead'>Billing Address</p>
+                <hr/>
+            {% url "checkout_address_create" as checkout_address_create %}
+            {% include 'addresses/form.html' with form=address_form next_url=request.build_absolute_uri action_url=checkout_address_create address_type='billing' %}
+                {% url 'checkout_address_reuse' as checkout_address_reuse %}
+                {% include 'addresses/prev_addresses.html' with address_qs=address_qs next_url=request.build_absolute_uri address_type='billing' action_url=checkout_address_reuse %}
+            </div>
+        </div>
+        {% else %}
+            <div class='row'>
+                <div class='col-md-6 mx-auto col-10'>
+                <h1>Оформление заказа</h1>
+                <hr>
+                <p>Продукты: {% for product in order.cart.products.all %}{{ product }}
+                    {% if not forloop.last %},
+                    {% endif %}
+                {% endfor %}
+                </p>
+                <p>Адрес доставки: {{ order.shipping_address.get_address }}</p>
+                <p>Стоимость товаров: {{ order.cart.total }}</p>
+                <p>Стоимость доставки: {{ order.shipping_total }}</p>
+                <p>К оплате: {{ order.total }}</p>
+                <form class='form' method='POST' action="">{% csrf_token %}
+                    <button type='submit' class="btn btn-success">Checkout</button>
+                </form>
+                </div>
+            </div>
+        {% endif %}
+    {% endif %}
+{% endblock %}

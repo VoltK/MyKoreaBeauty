@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+        <div class="container">
+              <div class="row" id="top3">
+                <div class="col-sm">
+                  <div class="card" style="margin-top: 50px">
+                      <div class="card-header">Второй по полярности продукт</div>
+                      <div  class="card-body"><p>Бутылочка Пивасика</p></div>
+                      <div class="card-footer" data-price="$4.99"><button class="btn btn-success">Узнать стоимость</button></div>
+                  </div>
+                </div>
+                <div class="col-sm">
+                  <div class="card" style="margin-top: 50px">
+                      <div class="card-header">Главный продукт</div>
+                      <div  class="card-body"><p>Бутылочка Водочка</p></div>
+                      <div class="card-footer" data-price="$6.99"><button class="btn btn-success">Узнать стоимость</button></div>
+                  </div>
+
+
+                </div>
+                <div class="col-sm">
+                  <div class="card" style="margin-top: 50px">
+                      <div class="card-header">Третий по популярности продукт</div>
+                      <div class="card-body"><p>Косячок</p></div>
+                      <div class="card-footer" data-price="$10"><button class="btn btn-success">Узнать стоимость</button></div>
+                  </div>
+                </div>
+              </div>
+            <!--<div class="row">
+                <div class="card"  style="margin-top: 50px">
+                      <div class="card-header">Третий по популярности продукт</div>
+                      <div class="card-body"><p>Косячок</p></div>
+                      <div class="card-footer" id="filterTest"><button class="btn btn-primary">Узнать стоимость</button></div>
+                  </div>
+            </div> -->
+            <div class="row">
+                <div class="card" style="margin-top: 20px">
+                    <div class="card-body" id="cardToggle">
+                        <button class="btn btn-primary" id="tgglBtn">Click me</button>
+                        <ul id="tggl">
+                            <li>Привет</li>
+                            <li>Как дела</li>
+                            <li>Твое имя?</li>
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="col-sm-5">
+                    <div class="card" id="pane" style="margin-top: 15px">
+                        <div class="card-header">
+                            <h1>"KD's move"</h1>
+                        </div>
+                        <div class="card-body" >
+                            <p>Hi, we are young moving company and we will help you<br>
+                                to move to better place safely and comfortable.</p>
+                            <p>To get our price list click following button</p><button id="prc" class="btn btn-success">Prices</button>
+                            <ul id="price_lst" style="display: none">
+                                <li>3 bedroom- <span >$7000</span></li>
+                                <li>2 bedroom- <span >$5000</span></li>
+                                <li>1 bedroom- <span >$3500</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-5" style="margin-top: 15px">
+                    <div class="card" id="valInput">
+                        <div class="card-body" id="items" data-price="25.00">
+                            <p>Please enter amount of items you wish to buy</p>
+                            <p>Amount of items:
+                                <form>
+                                    <input type="number" class="form-control" id="amount" value="1">
+                                </form>
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            <p>Total price: <span class="totalPrice">25.00</span></p>
+                        </div>
+                    </div>
+
+                </div>
+                </div>
+
+                <div class="row">
+                    <p class="desk">
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vulputate varius est, in volutpat ante sagittis et. Vivamus semper gravida lacus, ac vestibulum ligula venenatis vitae. Morbi dui dolor, egestas in blandit ac, porta ac velit. Donec convallis dolor non nisl tristique, sed vehicula augue vestibulum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus in lacus at ipsum tincidunt consequat. Duis ut consequat lacus, vel porta est.
+
+Suspendisse at placerat magna, ut commodo nulla. Nam nec velit in ante interdum euismod. Vivamus at ante id massa porttitor imperdiet. Cras nec leo diam. Proin lobortis elit lacus, quis blandit ipsum pellentesque at. Sed sagittis congue dui, quis cursus libero. Nulla quis metus eget lorem ultricies sollicitudin. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras varius nulla est, non fermentum metus facilisis eget. Sed efficitur velit vitae turpis rhoncus tristique. Fusce feugiat, dolor eget rutrum tincidunt, magna mi vulputate sem, at scelerisque elit eros quis justo. In viverra magna id orci aliquam sagittis. Proin eget aliquet tellus.
+
+Quisque pulvinar enim eros, et bibendum nulla iaculis sed. Aliquam accumsan est libero, vitae dictum arcu vulputate vel. Suspendisse commodo scelerisque neque, eu dapibus arcu tincidunt sit amet. Quisque pretium sagittis lorem quis facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate risus quis fermentum fermentum. Aenean accumsan, dui tempus gravida aliquet, diam nunc viverra neque, eu accumsan felis justo vel justo. Curabitur posuere velit nec massa aliquam interdum ac nec turpis. Quisque nec augue id nibh maximus sodales eu non justo. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+
+Pellentesque at odio accumsan, aliquam metus non, sagittis lectus. Sed efficitur ullamcorper turpis, et aliquet nisl fermentum vel. Nulla a ornare velit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec pretium dolor urna, ac euismod lorem porta quis. Nam dignissim urna non metus congue cursus. Phasellus venenatis condimentum mi ut varius. Maecenas sagittis nulla sit amet erat euismod mattis.
+
+Donec ultricies libero eu aliquet vulputate. Fusce feugiat ullamcorper turpis fringilla posuere. Praesent eget convallis velit, luctus efficitur urna. Vestibulum et mi vel est pharetra maximus. Aliquam quis odio feugiat, egestas augue in, sollicitudin justo. Morbi ullamcorper sapien sed augue bibendum rhoncus sit amet eu augue. Aenean felis massa, auctor fermentum iaculis sit amet, dictum eu est. Nullam vel velit nisi. Sed pulvinar elit a est posuere fringilla vel id urna. Sed elementum, arcu vitae venenatis tincidunt, diam purus faucibus libero, in convallis ligula turpis at dolor. Maecenas efficitur odio eu nunc blandit pulvinar. Aliquam molestie faucibus interdum.
+
+Aliquam erat volutpat. Vestibulum venenatis vel tortor id tempus. Aliquam vel lorem magna. Fusce efficitur mauris nec eros porttitor, at pharetra enim volutpat. In hac habitasse platea dictumst. Morbi a lectus in justo dapibus efficitur in blandit nisl. Phasellus mattis augue lectus, nec iaculis felis tempor sed. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin vel libero et odio lacinia sodales eget et sapien. Quisque a dolor vitae purus pretium interdum. Nullam quis erat et nisi interdum luctus eu non dolor.
+
+Donec aliquam mollis tellus sed egestas. Maecenas eu arcu dictum, tincidunt ligula a, dictum lectus. Nullam dui velit, varius sed massa in, dignissim tincidunt metus. Ut iaculis augue at metus bibendum, at vulputate leo ornare. Curabitur laoreet sodales odio condimentum pulvinar. Morbi id dolor id turpis bibendum lacinia. Mauris dictum aliquet dui, vitae sodales arcu condimentum in. Vestibulum lacinia dictum mattis.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean condimentum leo eu massa vehicula rutrum. Ut sit amet justo ut eros tristique varius. Proin tempor, turpis vitae finibus dignissim, libero nulla euismod lectus, sit amet mattis arcu tellus sed nunc. Phasellus vehicula enim tellus, porta accumsan risus maximus ut. Sed dignissim varius neque at consequat. Phasellus diam arcu, cursus luctus sagittis eget, vestibulum eu leo. Quisque rhoncus nulla vel condimentum fermentum. Fusce sollicitudin massa vel dui ultricies, vitae rhoncus mauris sodales. Suspendisse at sollicitudin eros. Vivamus dapibus nulla vel lacinia posuere. Fusce lacinia suscipit ligula. In purus lectus, commodo in posuere in, molestie a velit. Phasellus finibus ligula at accumsan elementum. Donec ipsum urna, gravida ac pellentesque consequat, sagittis et lacus.
+
+In congue dolor quis urna eleifend tincidunt in non felis. Vivamus sed odio placerat arcu dapibus faucibus quis at ante. Duis viverra nibh lectus, quis auctor elit posuere at. Donec nec congue sapien. Curabitur in finibus nisl. Quisque finibus, enim ut tincidunt tincidunt, enim odio egestas ligula, aliquam fermentum sapien nisl ac sem. Sed hendrerit suscipit augue in aliquam. Morbi molestie turpis sed placerat molestie. Donec varius, diam eu pellentesque ornare, odio risus porta felis, scelerisque lacinia lacus elit quis turpis. Suspendisse quis ante quis nulla molestie suscipit.
+
+Nam in ante dui. Duis dapibus, mauris ut venenatis vestibulum, nibh nunc laoreet augue, vitae aliquam urna erat quis quam. Integer ut turpis vel felis egestas efficitur. Quisque maximus, tortor ac gravida dignissim, enim quam vulputate leo, maximus pretium ex purus in eros. Suspendisse ac est sagittis, commodo est id, feugiat lorem. Aenean vitae enim eleifend, maximus felis condimentum, venenatis nulla. Integer vulputate turpis justo.
+
+Vivamus sed lacinia lectus, ut posuere nibh. Pellentesque in nunc vehicula, elementum arcu eget, fringilla velit. Quisque luctus lacus nec sapien porta, id bibendum mi ullamcorper. Quisque elit felis, porta nec suscipit in, lacinia ac nisi. Curabitur porta massa non erat commodo consectetur. Phasellus semper augue cursus sapien pellentesque, at aliquet eros consequat. Sed mauris libero, facilisis at convallis sit amet, dictum ac quam. Vestibulum interdum, turpis ac blandit hendrerit, dui ligula faucibus mauris, in varius sapien neque quis augue. In fringilla ac mauris eget maximus.
+
+Praesent non nibh nibh. Nam a massa placerat, pharetra felis ut, blandit arcu. Quisque aliquet interdum dapibus. Nulla dictum pretium leo, vitae volutpat tellus mattis quis. Quisque non augue mattis, aliquet mi cursus, facilisis ex. Curabitur venenatis vel magna ut eleifend. Sed at ipsum elementum, sagittis nisl at, ultrices ex. Morbi condimentum convallis auctor. Suspendisse vel suscipit sem, eu sagittis purus.
+
+Ut tincidunt facilisis lorem in ornare. Sed placerat nunc nunc, a posuere velit mattis sed. Quisque quis ante neque. Proin id condimentum lectus. Maecenas quis felis eget lorem euismod blandit. Nullam dapibus erat arcu, sed hendrerit tortor consectetur eget. Nullam ut lacus vitae dolor tempor dignissim. Quisque vel elit et tellus convallis ultricies sagittis sed nibh. Sed eu cursus velit, nec fermentum leo. Cras bibendum, diam eget tempor porta, leo tortor lobortis ligula, tristique fermentum leo nulla quis mauris. Aenean porta velit et dolor bibendum elementum.
+
+Phasellus rhoncus euismod tempus. Morbi vestibulum lacus a sapien fermentum laoreet. Nam ac volutpat justo, a volutpat felis. In hac habitasse platea dictumst. Vivamus congue rutrum arcu ultrices sollicitudin. Maecenas pharetra, felis in luctus aliquam, lacus sapien posuere elit, nec vestibulum eros sapien et justo. Cras pellentesque tortor ac consequat congue. Duis vitae fringilla dui.
+
+Sed condimentum lobortis iaculis. Duis pellentesque metus eu nisl iaculis, sed luctus ex tristique. Vivamus sagittis est libero, a pellentesque felis laoreet vel. Curabitur ac ipsum convallis, accumsan urna id, imperdiet erat. In facilisis, justo non molestie condimentum, neque lorem feugiat risus, sed cursus mauris turpis quis tortor. Nam id lectus ac ex posuere porttitor vitae sit amet diam. Mauris quis placerat ipsum. Proin auctor augue massa, vel euismod felis luctus sit amet. Morbi condimentum eleifend augue, non commodo nisi accumsan sit amet. Fusce faucibus pulvinar lacus a gravida.
+
+Nullam auctor efficitur mi vel efficitur. Mauris arcu justo, dapibus id arcu ut, maximus tincidunt mauris. Suspendisse commodo nibh ornare blandit tincidunt. Maecenas orci turpis, tincidunt a malesuada eu, consequat sit amet libero. Sed mi lorem, sagittis non finibus sit amet, aliquet nec odio. Nullam bibendum ultrices augue, eu porttitor enim tincidunt non. Praesent iaculis vestibulum ex, quis lobortis est ultricies sed.
+
+Vivamus sem purus, volutpat ut varius eget, sagittis sed massa. In accumsan lacus id metus tempor ornare. Maecenas lacinia erat in scelerisque sollicitudin. Nulla maximus turpis sit amet mauris porttitor, et auctor tellus lacinia. Praesent fringilla elit et justo lobortis gravida. Mauris lobortis elit et orci dignissim finibus. Etiam metus ipsum, aliquet eget congue vestibulum, rutrum eu velit. Integer non massa neque.
+
+Suspendisse a laoreet arcu. Sed posuere diam at vulputate gravida. Praesent efficitur gravida libero id pellentesque. Donec id consectetur lectus. Nullam quis nibh quis magna porta condimentum. Nullam ac volutpat ligula, nec mattis augue. Praesent suscipit urna hendrerit mauris ullamcorper, quis ultricies dolor ultricies. Nunc vitae suscipit tellus. Morbi mattis neque sed nisl feugiat consequat. Aliquam ornare a magna et viverra. Vestibulum egestas dapibus mattis. Pellentesque non metus congue, ultricies elit rhoncus, iaculis odio. Cras dapibus libero vitae dui aliquam, a pretium odio facilisis.
+
+Ut malesuada lorem orci, ac mattis nisl vestibulum sed. Ut mattis dolor nec hendrerit ornare. Donec at hendrerit leo. Aliquam hendrerit, enim ac cursus volutpat, libero libero maximus augue, in ultricies nisi lectus eget magna. Proin venenatis vulputate mauris, in vestibulum turpis ultricies eu. Nunc velit ipsum, hendrerit sit amet dui in, lacinia fringilla nunc. Vivamus libero eros, consequat in blandit ut, rutrum vel ante. In placerat est sed neque convallis placerat. Sed interdum lorem vel risus dignissim, ac tristique nulla hendrerit. Vivamus vulputate eros in tellus eleifend vestibulum nec vel nibh.
+
+Sed tincidunt posuere mauris sit amet malesuada. Ut molestie malesuada urna, quis finibus lorem porttitor et. Mauris vulputate nibh viverra, imperdiet risus mollis, dictum sem. Sed semper rhoncus turpis at auctor. Duis nisl nulla, interdum sit amet ultricies sit amet, ullamcorper non neque. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi vel nisl ante. Donec efficitur massa mauris, faucibus porttitor tellus auctor ut. Praesent eleifend laoreet nibh, id eleifend risus posuere a. Sed egestas dolor ac mauris tincidunt, nec blandit est semper. Quisque leo velit, gravida efficitur vehicula eu, vestibulum quis justo. Donec in sem non mauris dignissim porttitor. Suspendisse potenti. Sed luctus, felis sed faucibus sodales, quam eros rutrum dui, id mattis magna lectus eu felis. </p>
+                <div class="col-sm-4">
+                    <div class="card" >
+                        <div class="card-body" id="animationTest">
+                            <p id="pAnime">Привет, я анимация</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <form  class="smForm" method="post" action="#">
+                        <textarea id='area' name="content-form" class="form-control"></textarea>
+                        <input type="submit" class='form-control' value="save">
+                    </form>
+                </div>
+                </div>
+
+            </div>
+        <div class="formSub">
+
+            </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+        <script>
+            $(document).ready(function () {
+
+                var newContent = $('.smForm');
+                newContent.submit(function (event) {
+                    event.preventDefault();
+                    //console.log(newContent.serialize());
+                    var $this = $(this);
+                    var textArea = $this.find('textarea');
+                    //console.log(textArea.attr('name'));
+                    var formMethod = $this.attr("method");
+                    var formAction = $this.attr('action');
+                    var data = {
+                        'content': textArea.val(),
+                        'method': formMethod,
+                        'action': formAction
+                    };
+                    $('.formSub').text(textArea.val() + 'method is ' + formMethod)
+                });
+
+
+                $('#top3').on('click', 'button', function () {
+                    var amount = $(this).closest('.card-footer').data('price');
+                    //var amount = foot.data('price');
+                    var price = $('<p>Стоит ' + amount +'</p>');
+                    $(this).after(price);
+                    $(this).hide('slow');
+                });
+
+
+                //$('#filterTest').on('click', 'button', function () {
+                //    $(this).parent().parent().addClass('highlighted');
+                //  $(this).remove()
+                //});
+
+                $('#cardToggle').on('click', '#tgglBtn', function () {
+                    $('#tggl').slideToggle();
+                });
+
+                $('#pane').on('click', '#prc', showPrice);
+
+                 //$('#price_lst').on('mouseenter', 'li', function () {
+                   //  $(this).find('span').slideToggle()
+                 //});
+
+                //toggle function
+                 function showPrice(){
+                     $('#price_lst').slideToggle()
+                 }
+
+
+                 //check <p> for its parameters and makes text scrollable
+                var description = $(".desk");
+
+                description.css("height", "300px").css('width', '250px');
+
+                var actualHeight = description[0].scrollHeight;
+                var shouldBeHeight = description.height();
+                //console.log(actualHeight, shouldBeHeight);
+
+                if (actualHeight > shouldBeHeight){
+                    description.css("overflow-y", 'scroll');
+                }
+
+                //calculate total price of items
+                $("#items").on('change', '#amount', function () {
+                    var price = +$(this).closest('#items').data('price');
+                    //console.log(price + " price for 1 item");
+                    var amount = +$(this).val();
+                    //console.log(amount + ' amount');
+                    $('.totalPrice').text("$"+price * amount)
+
+                });
+
+                //setting value for focused input
+                //$('#amount').on('focus', function () {
+                //    $(this).val(7)
+                //})
+
+
+
+
+            })
+        </script>
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+  </body>
+</html>

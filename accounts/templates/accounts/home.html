@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="col-12">
+                <h1>Профиль</h1>
+                <p>{{ request.user }}</p>
+            </div>
+            <hr>
+        </div>
+         <div class="col-12 col-md-4 my-3 mr-auto">
+             <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                <h5 class="card-title">Личная информация</h5>
+                    <div class="list-group">
+                        <a class="list-group-item">Имя</a>
+                        <a class="list-group-item">Изменить пароль</a>
+                    </div>
+                </div>
+            </div>
+         </div>
+        <div class="col-12 col-md-4 my-3 mr-auto">
+             <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                <h5 class="card-title">Заказы</h5>
+                    <div class="list-group">
+                        <a class="list-group-item" href="#">Заказы</a>
+                        <a class="list-group-item" href="#">Адреса</a>
+                    </div>
+                </div>
+            </div>
+         </div>
+        <div class="col-12 col-md-4 my-3 mr-auto">
+             <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                <h5 class="card-title">Просмотренные товары</h5>
+                </div>
+            </div>
+         </div>
+
+    </div>
+</div>
+{% endblock %}
+

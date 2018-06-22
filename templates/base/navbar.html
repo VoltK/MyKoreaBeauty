@@ -1,0 +1,68 @@
+ {% url 'blog:post_list' as blog %}
+ {% url 'about' as about_us %}
+ {% url 'products:list' as prod_list_url %}
+ {% url 'register' as rega_url %}
+ {% url 'cart:cart_home' as cart %}
+ {% url 'account:home' as account_url %}
+
+
+
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-3">
+          <a class="navbar-brand" href="{{ prod_list_url }}">mykorea_beauty</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item {% if request.path == prod_list_url %}active{% endif %}">
+                <a class="nav-link" href="{{ prod_list_url }}">Косметика<span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item {% if request.path == blog %}active{% endif %}">
+                <a class="nav-link" href="{{ blog }}">Блог</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Категории
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">Ночь</a>
+                  <a class="dropdown-item" href="#">День</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Для лица?</a>
+                </div>
+              </li>
+              <li class="nav-item {% if request.path == about_us %}active{% endif %}">
+                <a class="nav-link" href="{% url 'contact' %}">Связаться с нами</a>
+              </li>
+              <li>
+                  <form class="form-inline my-2 my-lg-0 search-form" method="get" action="{% url 'search:query' %}">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Искать" name="q" value="{{ request.GET.q }}" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Поиск</button>
+                  </form>
+              </li>
+            </ul>
+            <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
+                <li class="nav-item {% if request.path == cart %}active{% endif %}">
+                    <a class="nav-link" href="{{ cart }}">
+                        <span class="navbar-cartCount">{{ request.session.cart_items }}</span> <i class="fas fa-shopping-cart" style="margin-right: 5px"></i>
+                    </a>
+                </li>
+                {% if request.user.is_authenticated %}
+                    <li class="nav-item order-2 order-md-1 {% if request.path == account_url %}active{% endif %}">
+                        <a href="{{ account_url }}" class="nav-link"><i class="fas fa-user" style="margin-right: 5px"></i>Профиль</a>
+                    </li>
+                <li class="nav-item order-2 order-md-1">
+                    <a href="{% url 'logout' %}" class="nav-link"><i class="fas fa-power-off" style="margin-right: 5px"></i>Logout</a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'register' %}">Регистрация</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'login' %}">Войти</a>
+                {% endif %}
+            </ul>
+          </div>
+        </nav>
+

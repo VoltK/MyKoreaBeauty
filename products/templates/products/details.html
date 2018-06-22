@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="row ">
+           <div class="col-4">
+               <h1>{{ product.title }}</h1><br>
+               Добавлено: {{ product.timestamp|date:"SHORT_DATE_FORMAT" }} <br>
+               {{ product.price }}<br>
+
+           </div>
+           <div class="col-4">
+            {% if product.image %}
+                <img src="{{ product.image.url}}">
+            {% endif %}
+           </div>
+            <div class="col-4">
+            <p>{{ product.description|linebreaks }}</p>
+           </div>
+        <div class="col-12 col-md-6">
+            {% include 'snippets/cart_update.html' with product=object cart=cart %}
+        </div>
+    </div>
+
+{% endblock %}
