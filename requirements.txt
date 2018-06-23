@@ -4,7 +4,14 @@ dj-database-url==0.5.0
 Django==1.11.10
 gunicorn==19.8.1
 idna==2.7
+Pillow==5.1.0
 psycopg2==2.7.5
 pytz==2018.3
 requests==2.19.1
 urllib3==1.23
+chardet==3.0.4
+gitdb2==2.0.3
+gitpython==2.1.7
+olefile==0.44
+setuptools==36.6.0
+wheel==0.30.0
