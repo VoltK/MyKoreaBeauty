@@ -1,6 +1,6 @@
 
 
-<form class="form-product-ajax" method="POST" action="{% url 'cart:cart_update' %}" data-endpoint="{% url 'cart:cart_update' %}">{% csrf_token %}
+<form class="form-product-ajax" method="POST" style="margin-top: 10px" action="{% url 'cart:cart_update' %}" data-endpoint="{% url 'cart:cart_update' %}">{% csrf_token %}
 
     <input type="hidden" name="product" value="{{ product.id }}">
         <span class="submit-span">

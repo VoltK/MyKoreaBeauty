@@ -79,7 +79,7 @@ ROOT_URLCONF = 'my_korea.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, '../../templates')]
+        'DIRS': [os.path.join(BASE_DIR, 'templates')]
         ,
         'APP_DIRS': True,
         'OPTIONS': {
@@ -102,12 +102,12 @@ WSGI_APPLICATION = 'my_korea.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, '../../db1.sqlite3'),
+        'NAME': os.path.join(BASE_DIR, 'db1.sqlite3'),
     }
 }
 
 import dj_database_url
-db_from_env = dj_database_url.config() # изменяем на PostgresSQL от Heroku
+db_from_env = dj_database_url.config() # изменяем на PostgresSQL в Heroku
 DATABASES['default'].update(db_from_env)
 DATABASES['default']['CONN_MAX_AGE'] = 500
 
@@ -153,14 +153,14 @@ LOGOUT_REDIRECT_URL = '/login/'
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "../../static_my_proj"),
+    os.path.join(BASE_DIR, "static_my_proj"),
 ]
 
 STATIC_ROOT = os.path.basename(r"C:\Users\khud4\PycharmProjects\my_korea\venv\static_cdn")
 
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "../../../static_cdn", "media_root")
+MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_cdn", "media_root")
 
 CORS_REPLACE_HTTPS_REFERER      = True
 HOST_SCHEME                     = "https://"
