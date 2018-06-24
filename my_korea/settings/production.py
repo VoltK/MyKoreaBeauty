@@ -36,6 +36,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # amazon storage
+    'storages',
+
     #  my apps
     'products',
     'search',
@@ -156,11 +160,13 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static_my_proj"),
 ]
 
-STATIC_ROOT = os.path.basename(r"C:\Users\khud4\PycharmProjects\my_korea\venv\static_cdn")
+STATIC_ROOT = os.path.join(BASE_DIR, 'static_cdn')
 
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_cdn", "media_root")
+MEDIA_ROOT = os.path.join(BASE_DIR, "static_cdn", "media_root")
+
+from my_korea.aws.utils import *
 
 CORS_REPLACE_HTTPS_REFERER      = True
 HOST_SCHEME                     = "https://"

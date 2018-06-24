@@ -26,7 +26,7 @@ def upload_image_path(instance, filename):
 
 class Post(models.Model):
     title       = models.CharField(max_length=120)
-    picture     = models.ImageField(upload_to='posts/', null=True, blank=True)
+    picture     = models.ImageField(upload_to=upload_image_path, null=True, blank=True)
     information = models.TextField(blank=True, null=True)
     timestamp   = models.DateTimeField(auto_now_add=True)
     slug        = models.SlugField(blank=True, unique=True)
