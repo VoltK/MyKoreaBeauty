@@ -4,7 +4,10 @@
     <bookmark url="file://$PROJECT_DIR$/jQuery/index_jq.html" description="&lt;p class=&quot;desk&quot;&gt;" line="94" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d147a47-32a2-4980-80a9-4ffdc5a969f8" name="Default" comment="" />
+    <list default="true" id="7d147a47-32a2-4980-80a9-4ffdc5a969f8" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/my_korea/aws/conf.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_korea/aws/conf.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_korea/settings/production.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_korea/settings/production.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,11 +32,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="production.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="production.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/my_korea/settings/production.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="168" column="32" lean-forward="true" selection-start-line="168" selection-start-column="32" selection-end-line="168" selection-end-column="32" />
+            <state relative-caret-position="680">
+              <caret line="67" column="65" selection-start-line="67" selection-start-column="65" selection-end-line="67" selection-end-column="65" />
             </state>
           </provider>
         </entry>
@@ -56,11 +59,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="conf.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="conf.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/my_korea/aws/conf.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="6" selection-start-line="6" selection-end-line="6" />
+            <state relative-caret-position="120">
+              <caret line="6" column="9" lean-forward="true" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
+              <folding>
+                <element signature="e#0#15#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -148,13 +154,13 @@
         <option value="$PROJECT_DIR$/my_korea/aws/__init__.py" />
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/my_korea/aws/utils.py" />
-        <option value="$PROJECT_DIR$/my_korea/aws/conf.py" />
         <option value="$PROJECT_DIR$/products/models.py" />
         <option value="$PROJECT_DIR$/blog/models.py" />
         <option value="$PROJECT_DIR$/my_korea/settings/base.py" />
         <option value="$PROJECT_DIR$/my_korea/settings/local.py" />
         <option value="$PROJECT_DIR$/my_korea/settings/__init__.py" />
         <option value="$PROJECT_DIR$/my_korea/settings/production.py" />
+        <option value="$PROJECT_DIR$/my_korea/aws/conf.py" />
       </list>
     </option>
   </component>
@@ -167,7 +173,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="951" />
     <option name="width" value="978" />
     <option name="height" value="524" />
@@ -333,6 +339,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32914287" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.09597316" side_tool="true" visible="true" weight="0.3495702" />
@@ -730,17 +737,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/my_korea/aws/conf.py">
+    <entry file="file://$PROJECT_DIR$/my_korea/settings/production.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        <state relative-caret-position="680">
+          <caret line="67" column="65" selection-start-line="67" selection-start-column="65" selection-end-line="67" selection-end-column="65" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/my_korea/settings/production.py">
+    <entry file="file://$PROJECT_DIR$/my_korea/aws/conf.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="168" column="32" lean-forward="true" selection-start-line="168" selection-start-column="32" selection-end-line="168" selection-end-column="32" />
+        <state relative-caret-position="120">
+          <caret line="6" column="9" lean-forward="true" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
