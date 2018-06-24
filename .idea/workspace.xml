@@ -4,18 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/jQuery/index_jq.html" description="&lt;p class=&quot;desk&quot;&gt;" line="94" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d147a47-32a2-4980-80a9-4ffdc5a969f8" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/my_korea/aws/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my_korea/aws/conf.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my_korea/aws/utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db1.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db1.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_korea/settings/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_korea/settings/base.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_korea/settings/production.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_korea/settings/production.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-    </list>
+    <list default="true" id="7d147a47-32a2-4980-80a9-4ffdc5a969f8" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,7 +33,7 @@
         <entry file="file://$PROJECT_DIR$/my_korea/settings/production.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="322">
-              <caret line="168" lean-forward="true" selection-start-line="168" selection-end-line="168" />
+              <caret line="168" column="32" lean-forward="true" selection-start-line="168" selection-start-column="32" selection-end-line="168" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -344,7 +333,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32914287" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.09597316" side_tool="true" visible="true" weight="0.3495702" />
@@ -752,7 +740,7 @@
     <entry file="file://$PROJECT_DIR$/my_korea/settings/production.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="322">
-          <caret line="168" lean-forward="true" selection-start-line="168" selection-end-line="168" />
+          <caret line="168" column="32" lean-forward="true" selection-start-line="168" selection-start-column="32" selection-end-line="168" selection-end-column="32" />
         </state>
       </provider>
     </entry>
