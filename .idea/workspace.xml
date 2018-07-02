@@ -4,12 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/jQuery/index_jq.html" description="&lt;p class=&quot;desk&quot;&gt;" line="94" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d147a47-32a2-4980-80a9-4ffdc5a969f8" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/analytics/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/analytics/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db1.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db1.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_korea/settings/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_korea/settings/base.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_korea/settings/local.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_korea/settings/local.py" afterDir="false" />
-    </list>
+    <list default="true" id="7d147a47-32a2-4980-80a9-4ffdc5a969f8" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,7 +20,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="base.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="base.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/my_korea/settings/base.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="102">
@@ -34,7 +29,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="production.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="production.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/my_korea/settings/production.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
@@ -326,7 +321,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32914287" />
@@ -692,13 +687,6 @@
     <entry file="file://$PROJECT_DIR$/analytics/mixins.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/my_korea/settings/production.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="30" column="31" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/my_korea/aws/conf.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="20">
@@ -716,6 +704,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/my_korea/settings/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="29" column="27" selection-start-line="29" selection-start-column="27" selection-end-line="29" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/my_korea/settings/local.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
@@ -723,10 +718,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/my_korea/settings/base.py">
+    <entry file="file://$PROJECT_DIR$/my_korea/settings/production.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="29" column="27" selection-start-line="29" selection-start-column="27" selection-end-line="29" selection-end-column="27" />
+        <state relative-caret-position="120">
+          <caret line="30" column="31" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
         </state>
       </provider>
     </entry>
