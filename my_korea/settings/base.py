@@ -25,6 +25,18 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'mykoreabeautyshop@gmail.com'
+EMAIL_HOST_PASSWORD = 'Khudik44'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'MyKoreaBeauty shop <mykoreabeautyshop@gmail.com>'
+
+Managers = (
+    ("mykoreabeautyshop@gmail.com", "Vlad")
+)
+
+Admins = Managers
 
 # Application definition
 
