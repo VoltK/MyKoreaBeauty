@@ -4,9 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>My Korea</title>
-     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <title>
+    {% block title %}My Korea{% endblock %}
+    </title>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
     {% include "base/css.html" %}
+    {% block css %}
+         <link rel="stylesheet" href="{% static 'img/korean_style.css' %}">
+    {% endblock %}
 </head>
 <body>
 {% include "base/navbar.html" %}
