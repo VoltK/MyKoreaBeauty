@@ -33,7 +33,7 @@ EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'MyKoreaBeauty shop <mykoreabeautyshop@gmail.com>'
 
 Managers = (
-    ("mykoreabeautyshop@gmail.com", "Vlad")
+    ("Vlad", "mykoreabeautyshop@gmail.com")
 )
 
 Admins = Managers

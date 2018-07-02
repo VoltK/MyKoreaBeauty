@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7d147a47-32a2-4980-80a9-4ffdc5a969f8" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/my_korea/settings/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_korea/settings/base.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_korea/settings/production.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_korea/settings/production.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_korea/settings/local.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_korea/settings/local.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -41,16 +40,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="local.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="local.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/my_korea/settings/local.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="362">
-              <caret line="39" selection-start-line="39" selection-end-line="39" />
+            <state relative-caret-position="282">
+              <caret line="35" column="12" selection-start-line="35" selection-start-column="12" selection-end-line="35" selection-end-column="12" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="conf.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="conf.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/my_korea/aws/conf.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="20">
@@ -135,8 +134,8 @@
         <option value="$PROJECT_DIR$/templates/404.html" />
         <option value="$PROJECT_DIR$/templates/500.html" />
         <option value="$PROJECT_DIR$/my_korea/settings/base.py" />
-        <option value="$PROJECT_DIR$/my_korea/settings/local.py" />
         <option value="$PROJECT_DIR$/my_korea/settings/production.py" />
+        <option value="$PROJECT_DIR$/my_korea/settings/local.py" />
       </list>
     </option>
   </component>
@@ -302,7 +301,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32914287" />
@@ -311,8 +310,8 @@
       <window_info anchor="bottom" id="Version Control" order="11" />
       <window_info anchor="bottom" id="Python Console" order="8" weight="0.32914287" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.90268457" visible="true" weight="0.3495702" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49317408" visible="true" weight="0.24966443" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.90268457" visible="true" weight="0.3495702" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49317408" visible="true" weight="0.24966443" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49932885" weight="0.3295129" />
@@ -684,13 +683,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/my_korea/settings/local.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="39" selection-start-line="39" selection-end-line="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/my_korea/settings/production.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2918">
@@ -702,6 +694,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="20">
           <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my_korea/settings/local.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="35" column="12" selection-start-line="35" selection-start-column="12" selection-end-line="35" selection-end-column="12" />
         </state>
       </provider>
     </entry>
