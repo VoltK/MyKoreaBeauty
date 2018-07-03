@@ -33,12 +33,10 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'MyKoreaBeauty shop <mykoreabeautyshop@gmail.com>'
 
-Managers = (
-    ("Vlad", "mykoreabeautyshop@gmail.com")
+ADMINS = (
+    ('Vlad', 'mykoreabeautyshop@gmail.com'),
 )
-
-Admins = Managers
-
+MANAGERS = ADMINS
 # Application definition
 
 INSTALLED_APPS = [
