@@ -1,6 +1,6 @@
+from random import randint
 import random
 import string
-
 from django.utils.text import slugify
 
 
@@ -8,14 +8,24 @@ def random_string_generator(size=10, chars=string.ascii_lowercase + string.digit
     return ''.join(random.choice(chars) for _ in range(size))
 
 
-def unique_order_id_generator(instance):
+def unique_key_activation_generator(instance):
+    size = randint(30, 50)
+    key = random_string_generator(size=size)
 
+    Klass = instance.__class__
+    qs_exists = Klass.objects.filter(key=key).exists()
+    if qs_exists:
+        return unique_order_id_generator(instance)
+    return key
+
+
+def unique_order_id_generator(instance):
     order_new_id = random_string_generator().upper()
 
     Klass = instance.__class__
     qs_exists = Klass.objects.filter(order_id=order_new_id).exists()
     if qs_exists:
-        return unique_order_id_generator(instance)
+        return unique_slug_generator(instance)
     return order_new_id
 
 

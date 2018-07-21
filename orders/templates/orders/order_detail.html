@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+                <h1>Заказ {{ object.order_id }}</h1>
+                <hr>
+                <p>Продукты: {% for product in order.cart.products.all %}{{ product }}
+                    {% if not forloop.last %},
+                    {% endif %}
+                {% endfor %}
+                </p>
+                <p>Адрес доставки: {{ order.shipping_address.get_address }}</p>
+                <p>Стоимость товаров: {{ order.cart.total }}</p>
+                <p>Стоимость доставки: {{ order.shipping_total }}</p>
+                <p>К оплате: {{ order.total }}</p>
+
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<div class='row'>
+        <div class="col-12 text-center">
+            {% if key %}
+            <h1 class='my-4 py-4'>Ошибка активации! Попробуйте снова.</h1>
+            {% else %}
+            <h1 class='my-4 py-4'>Активируйте ваш email снова.</h1>
+            {% endif %}
+        </div>
+
+</div>
+    <div class="d-flex justify-content-center align-items-center container">
+
+        <div class="row">
+                <form method="post" action="">{% csrf_token %}
+                    <div class="form-group">
+                    {{ form.as_p }}
+                    <input class="btn btn-success ml-3" type="submit" value="Отправить активацию">
+                    </div>
+                </form>
+        </div>
+
+    </div>
+{% endblock %}

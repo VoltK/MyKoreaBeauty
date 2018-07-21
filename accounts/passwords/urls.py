@@ -1,7 +1,7 @@
 from django.conf.urls import url
 from django.contrib.auth import views as auth_views
 
-urlpatterns  = [
+urlpatterns = [
 url(r'^password/change/$',
         auth_views.PasswordChangeView.as_view(),
         name='password_change'),

@@ -19,7 +19,7 @@ from django.conf.urls import url, include
 from django.urls import reverse_lazy
 from django.contrib import admin
 from django.contrib.auth.views import LogoutView
-from accounts.views import LoginView, RegisterView, guest_register
+from accounts.views import LoginView, RegisterView, GuestRegisterView
 from addresses.views import checkout_address_create_view, checkout_address_reuse_view
 from .views import home_page, about_page, contact_page
 from cart.views import cart_detail_api_view
@@ -37,11 +37,12 @@ urlpatterns = [
     url(r'^accounts/', include('accounts.urls', namespace='account')),
     url(r'^accounts/', include('accounts.passwords.urls')),
     url(r'^login/$', LoginView.as_view(), name='login'),
-    url(r'^register/guest/$', guest_register, name='guest_register'),
+    url(r'^register/guest/$', GuestRegisterView.as_view(), name='guest_register'),
     url(r'^logout/$', LogoutView.as_view(next_page=reverse_lazy('login')), name='logout'),
     url(r'^register/$', RegisterView.as_view(), name='register'),
     url(r'^products/', include('products.urls', namespace='products')),
     url(r'^search/', include('search.urls', namespace='search')),
+    url(r'^orders/', include('orders.urls', namespace='orders')),
     url(r'^cart/', include('cart.urls', namespace='cart')),
     url(r'^api/cart/', cart_detail_api_view, name='api-cart'),
     url(r'^checkout/address/create/$', checkout_address_create_view, name='checkout_address_create'),

@@ -1,9 +1,48 @@
 from django import forms
+from django.contrib.auth import authenticate, login
 from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import ReadOnlyPasswordHashField
+from .models import EmailActivation
+from django.core.urlresolvers import reverse
+from django.utils.safestring import mark_safe
+from django.contrib import messages
 
 
 User = get_user_model()
+
+
+class ReactivateEmailForm(forms.Form):
+    email = forms.EmailField(widget=forms.EmailInput(attrs={
+        'class': 'form-control',
+        'placeholder': 'Ваш email',
+    }))
+
+    def clean_email(self):
+        email = self.cleaned_data.get('email')
+        qs = EmailActivation.objects.email_exists(email)
+        if not qs.exists():
+            register_url = reverse("register")
+            msg = """"Этого email несуществует.
+                            Вы хотите <a href="{link}">зарегистрироваться</a>?
+                            """.format(link=register_url)
+            return forms.ValidationError(mark_safe(msg))
+        return email
+
+
+class UserDetailChangeForm(forms.ModelForm):
+    full_name = forms.CharField(label="Имя", required=False, widget=forms.TextInput(attrs={
+        'class': 'form-control',
+        'placeholder': 'Вашe имя',
+    }))
+    phone_number = forms.CharField(label="Телефон", required=False, widget=forms.TextInput(attrs={
+        'class': 'form-control',
+        'placeholder': 'Ваш телефонный номер',
+    }))
+
+
+    class Meta:
+        model = User
+        fields = ['full_name', 'phone_number']
 
 
 class UserAdminCreationForm(forms.ModelForm):
@@ -81,7 +120,9 @@ class RegisterForm(forms.ModelForm):
         # Save the provided password in hashed format
         user = super(RegisterForm, self).save(commit=False)
         user.set_password(self.cleaned_data["password1"])
-        #user.active = False
+        user.active = False  # письмо подтвержение будет отправлено Джанго сигналами
+        #obj = EmailActivation.objects.create(user=user)
+        #obj.send_activation_email()
         if commit:
             user.save()
         return user
@@ -105,43 +146,42 @@ class LoginForm(forms.Form):
         'style': 'margin-left: 10px',
     }))
 
-    password = forms.CharField(widget=forms.PasswordInput(attrs={
+    password = forms.CharField(label='Пароль', widget=forms.PasswordInput(attrs={
         'class': 'form-control',
         'placeholder': 'Ваш пароль',
         'style': 'margin-left: 10px',
     }))
 
+    def __init__(self, request, *args, **kwargs):
+        self.request = request
+        super(LoginForm, self).__init__(*args, **kwargs)
 
-# class RegisterForm(forms.Form):
-#     username = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Ваш username'}))
-#     email = forms.EmailField(widget=forms.EmailInput(attrs={
-#         'class': 'form-control',
-#         'placeholder': 'Ваш email',
-#     }))
-#     password = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Ваш пароль'}))
-#     password2 = forms.CharField(label='Подтвердите пароль',
-#                                 widget=forms.PasswordInput(attrs=
-#                                                            {'class': 'form-control',
-#                                                             'placeholder': 'Ваш пароль',}))
-#
-#     def clean_username(self):
-#         username = self.cleaned_data.get('username')
-#         qs = User.objects.filter(username=username)
-#         if qs.exists():
-#             raise forms.ValidationError("Этот username уже занят")
-#         return username
-#
-#     def clean_email(self):
-#         email = self.cleaned_data.get('email')
-#         qs = User.objects.filter(email=email)
-#         if qs.exists():
-#             raise forms.ValidationError("Этот email уже занят")
-#         return email
-#
-#     def clean(self):
-#             data = self.cleaned_data
-#             password = self.cleaned_data.get('password')
-#             password2 = self.cleaned_data.get('password2')
-#             if password2 != password:
-#                 raise forms.ValidationError("Пароли должный совпадать.")
-#             return data
+    def clean(self):
+        request = self.request
+        data = self.cleaned_data
+        email = data.get('email')
+        password = data.get('password')
+        qs = User.objects.filter(email=email)
+        if qs.exists():
+            not_active = qs.filter(active=False)
+            if not_active.exists():
+                link = reverse('account:resend-activation')
+                reconfirm_msg = """<a href='{resend_link}'> Перейдите сюда для повторной отправки активационного email</a>
+                """.format(resend_link=link)
+                email_activation = EmailActivation.objects.filter(email=email)
+                is_conf = email_activation.confirmable().exists()
+                if is_conf:
+                    msg1 = "Проверьте свою почту для активации аккаунта или" + reconfirm_msg.lower()
+                    raise forms.ValidationError(mark_safe(msg1))
+                email_conf_qs = EmailActivation.objects.email_exists(email)
+                if email_conf_qs.exists():
+                    raise forms.ValidationError(mark_safe('Email неподтверден.' + reconfirm_msg))
+                if not is_conf and not email_conf_qs.exists():
+                    raise forms.ValidationError('Этот аккаунт неактивирован')
+
+        user = authenticate(request, username=email, password=password)
+        if user is None:
+            raise forms.ValidationError('Неправильный логин или пароль')
+        login(request, user)
+        self.user = user
+        return data

@@ -4,10 +4,14 @@ from django.views.generic import ListView, DetailView
 from cart.models import Cart
 from analytics.mixins import ObjectViewedMixin
 from .models import Product
+from django.contrib.auth.mixins import LoginRequiredMixin
+
 
 
 class ProductListView(ListView):
     template_name = 'products/list.html'
+    paginate_by = 6
+
 
     def get_queryset(self, *args, **kwargs):
         request = self.request
@@ -49,4 +53,19 @@ class ProductDetailView(ObjectViewedMixin, DetailView):
             raise Http404('Произошла ошибка')
         return instance
 
+
+class UserHistoryProductView(LoginRequiredMixin, ListView):
+    template_name = 'products/user_history.html'
+
+    def get_queryset(self, *args, **kwargs):
+        request = self.request
+        views = request.user.objectview_set.by_model(Product)
+        #viewed_ids = [x.object_id for x in views]
+        return views
+
+    def get_context_data(self, *args, **kwargs):
+        context = super(UserHistoryProductView, self).get_context_data(*args, **kwargs)
+        cart_object, new_object = Cart.objects.new_or_get(self.request)
+        context['cart'] = cart_object
+        return context
 

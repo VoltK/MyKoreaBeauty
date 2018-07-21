@@ -6,6 +6,7 @@ from .models import Post
 
 class PostListView(ListView):
     template_name = 'post/post_list.html'
+    paginate_by = 3
 
     def get_queryset(self, *args, **kwargs):
         request = self.request

@@ -32,6 +32,7 @@ EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'MyKoreaBeauty shop <mykoreabeautyshop@gmail.com>'
+BASE_URL = 'https://www.mykoreabeauty.com.ua'
 
 ADMINS = (
     ('Vlad', 'mykoreabeautyshop@gmail.com'),

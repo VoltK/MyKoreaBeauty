@@ -14,8 +14,8 @@
                 <div class="card-body">
                 <h5 class="card-title">Личная информация</h5>
                     <div class="list-group">
-                        <a class="list-group-item">Имя</a>
-                        <a class="list-group-item">Изменить пароль</a>
+                        <a class="list-group-item" href="{% url 'account:update_profile' %}">Изменить детали</a>
+                        <a class="list-group-item" href="{% url 'password_change' %}">Изменить пароль</a>
                     </div>
                 </div>
             </div>
@@ -25,7 +25,7 @@
                 <div class="card-body">
                 <h5 class="card-title">Заказы</h5>
                     <div class="list-group">
-                        <a class="list-group-item" href="#">Заказы</a>
+                        <a class="list-group-item" href="{% url 'orders:order_list' %}">Заказы</a>
                         <a class="list-group-item" href="#">Адреса</a>
                     </div>
                 </div>
@@ -35,6 +35,9 @@
              <div class="card" style="width: 18rem;">
                 <div class="card-body">
                 <h5 class="card-title">Просмотренные товары</h5>
+                    <div class="list-group">
+                        <a class="list-group-item" href="{% url 'account:user_history' %}">История</a>
+                    </div>
                 </div>
             </div>
          </div>

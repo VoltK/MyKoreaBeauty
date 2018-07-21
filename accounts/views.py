@@ -1,13 +1,15 @@
 from django.shortcuts import render, redirect
+from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.contrib.auth import authenticate, login, get_user_model
-from .forms import LoginForm, RegisterForm, GuestForm
-from django.views.generic import CreateView, FormView, DetailView
-from .models import GuestEmail
+from .forms import LoginForm, RegisterForm, GuestForm, ReactivateEmailForm, UserDetailChangeForm
+from django.views.generic.edit import FormMixin
+from django.views.generic import CreateView, FormView, DetailView, View, UpdateView
+from .models import GuestEmail, EmailActivation
 from django.utils.http import is_safe_url
-from .signals import user_logged_in
+from django.core.urlresolvers import reverse
+from django.utils.safestring import mark_safe
 
 # Функцией
 # @login_required
@@ -27,23 +29,84 @@ class AccountHomeView(LoginRequiredMixin, DetailView):
     # def dispatch(self, request, *args, **kwargs):
     #     return super(AccountHomeView, self).dispatch(self, *args, **kwargs)
 
-def guest_register(request):
-    form = GuestForm(request.POST or None)
-    context = {"form": form}
-    print("User logged in:")
-    next_ = request.GET.get('next')
-    next_post = request.POST.get('next')
-    redirect_path = next_ or next_post or None
-    if form.is_valid():
+
+class AccountEmailActivationView(FormMixin, View):
+    success_url = '/login/'
+    form_class = ReactivateEmailForm
+    key = None
+
+    def get(self, request, key=None, *args, **kwargs):
+        self.key = key
+        if key is not None:
+            qs = EmailActivation.objects.filter(key__iexact=key)
+            confirm_qs = qs.confirmable()
+            if confirm_qs.count() == 1:
+                obj = confirm_qs.first()
+                obj.activate()
+                messages.success(request, 'Вы успешно подтвердили email и теперь можете войти.')
+                return redirect('login')
+            else:
+                activated_qs = qs.filter(activated=True)
+                if activated_qs.exists():
+                    reset_url = reverse('password_reset')
+                    msg = """Вы уже подтвердили ваш email.
+                    Вы хотите <a href="{link}">сменить пароль</a>?
+                    """.format(link=reset_url)
+                    messages.success(request, mark_safe(msg))
+                    return redirect('login')
+        context = {'form': self.get_form(), 'key': key}
+        return render(request, 'registration/activation-error.html', context)
+
+    def post(self, request, *args, **kwargs):
+        form = self.get_form()
+        if form.is_valid():
+            return self.form_valid(form)
+        else:
+            return self.form_invalid(form)
+
+    def form_valid(self, form):
+        msg = """Ссылка для активации отправлена. Пожалуйста, проверьте свою почту"""
+        request = self.request
+        messages.success(request, msg)
+        email = form.cleaned_data.get("email")
+        obj = EmailActivation.objects.email_exists(email).first()
+        user = obj.user
+        new_activation = EmailActivation.objects.create(user=user, email=email)
+        new_activation.send_activation_email()
+        return super(AccountEmailActivationView, self).form_valid(form)
+
+    def form_invalid(self, form):
+        context = {'form': form, 'key': self.key}
+        return render(self.request, 'registration/activation-error.html', context)
+
+
+class NextUrlMixin(object):
+    default_next = "/"
+
+    def get_next_url(self):
+        request = self.request
+        next_ = request.GET.get('next')
+        next_post = request.POST.get('next')
+        redirect_path = next_ or next_post or None
+        if is_safe_url(redirect_path, request.get_host()):
+                return redirect_path
+        return self.default_next
+
+
+class GuestRegisterView(NextUrlMixin, FormView):
+    form_class = GuestForm
+    default_next = '/register/'
+
+    def form_invalid(self, form):
+        return redirect(self.default_next)
+
+    def form_valid(self, form):
         phone = form.cleaned_data.get('phone')
         email = form.cleaned_data.get('email')
         new_guest_phone_email = GuestEmail.objects.create(phone=phone, email=email)
-        request.session['guest_phone_email_id'] = new_guest_phone_email.id
-        if is_safe_url(redirect_path, request.get_host()):
-            return redirect(redirect_path)
-        else:
-            return redirect("/register/")
-    return redirect('/register/')
+        self.request.session['guest_phone_email_id'] = new_guest_phone_email.id
+        return redirect(self.get_next_url())
+
 
 
 class LoginView(FormView):
@@ -51,52 +114,25 @@ class LoginView(FormView):
     success_url = '/products/'
     template_name = 'auth/login.html'
 
-    def form_valid(self, form):
-        email = form.cleaned_data.get('email')
-        password = form.cleaned_data.get('password')
+    def get_form_kwargs(self):
+        kwargs = super(LoginView, self).get_form_kwargs()
+        print(kwargs)
+        kwargs['request'] = self.request
+        return kwargs
+
+    def get_next_url(self):
         request = self.request
-        user = authenticate(request, username=email, password=password)
         next_ = request.GET.get('next')
         next_post = request.POST.get('next')
         redirect_path = next_ or next_post or None
-        if user is not None:
-            login(request, user)
-            user_logged_in.send(user.__class__, instance=user, request=request)
-            try:
-                del request.session['guest_email_id']
-            except:
-                pass
-            if is_safe_url(redirect_path, request.get_host()):
-                return redirect(redirect_path)
-            else:
-                return redirect("/products/")
-        return super(LoginView, self).form_invalid(form)
-
-def login_page(request):
-    form = LoginForm(request.POST or None)
-    context = {"form": form}
-    next_ = request.GET.get('next')
-    next_post = request.POST.get('next')
-    redirect_path = next_ or next_post or None
-    if form.is_valid():
-        username = form.cleaned_data.get('username')
-        password = form.cleaned_data.get('password')
-        user = authenticate(request, username=username, password=password)
-
-        if user is not None:
-            login(request, user)
-            try:
-                del request.session['guest_email_id']
-            except:
-                pass
-            if is_safe_url(redirect_path, request.get_host()):
-                return redirect(redirect_path)
-            else:
-                return redirect("/products/")
+        if is_safe_url(redirect_path, request.get_host()):
+            return redirect_path
         else:
-            print("Error")
+            return '/products/'
 
-    return render(request, "auth/login.html", context)
+    def form_valid(self, form):
+            next_path = self.get_next_url()
+            return redirect(next_path)
 
 
 class RegisterView(CreateView):
@@ -105,12 +141,18 @@ class RegisterView(CreateView):
     success_url = '/login/'
 
 
+class UserDetailUpdateView(LoginRequiredMixin, UpdateView):
+    form_class = UserDetailChangeForm
+    template_name = 'accounts/form_user_detail_update.html'
 
-# User = get_user_model()
-# def register_page(request):
-#     form = RegisterForm(request.POST or None)
-#     context = {"form": form}
-#
-#     if form.is_valid():
-#         form.save()
-#     return render(request, "auth/register.html", context)
+    def get_object(self):
+        return self.request.user
+
+    def get_context_data(self, *args, **kwargs):
+        context = super(UserDetailUpdateView, self).get_context_data(*args, **kwargs)
+        context['title'] = 'Изменить ваши данные'
+        return context
+
+    def get_success_url(self):
+        return reverse('account:home')
+

@@ -1,5 +1,6 @@
 from django.db import models
 from math import fsum
+from django.core.urlresolvers import reverse
 from django.db.models.signals import pre_save, post_save
 from addresses.models import Address
 from billing.models import BillingProfile
@@ -14,7 +15,19 @@ ORDER_STATUS_CHOICES = (
                          )
 
 
+class OrderManagerQuerySet(models.query.QuerySet):
+    def by_request(self, request):
+        billing_profile, created = BillingProfile.objects.new_or_get(request)
+        return self.filter(billing_profile=billing_profile)
+
+
 class OrderManager(models.Manager):
+
+    def get_queryset(self):
+        return OrderManagerQuerySet(self.model, using=self._db)
+
+    def by_request(self, request):
+        return self.get_queryset().by_request(request)
 
     def new_or_get(self, billing_profile, cart_object):
         created = False
@@ -46,6 +59,9 @@ class Order(models.Model):
         return self.order_id
 
     objects = OrderManager()
+
+    def get_absolute_url(self):
+        reverse('orders:detail', kwargs={'order_id', self.order_id})
 
     def update_total(self):
         cart_total = self.cart.total
