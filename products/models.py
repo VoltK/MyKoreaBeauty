@@ -80,7 +80,7 @@ class ProductManager(models.Manager):
 
 
 class Product(models.Model):
-    category = models.ForeignKey(Category, related_name='products', on_delete=models.CASCADE)
+    category = models.ForeignKey(Category, related_name='products', on_delete=models.CASCADE, blank=True, null=True)
     title       = models.CharField(max_length=120)
     slug        = models.SlugField(blank=True, unique=True)
     description = models.TextField(null=True)
