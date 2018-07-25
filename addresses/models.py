@@ -20,6 +20,10 @@ class Address(models.Model):
     def __str__(self):
         return str(self.billing_profile)
 
+    class Meta:
+        verbose_name = 'адрес'
+        verbose_name_plural = 'Адреса'
+
     def get_address(self):
         return "{city},\n{street},\n Отделение Новой Почты: {otdelenie_NP},\n{zip_code}".format(
             city=self.city,

@@ -1,41 +1,48 @@
 {% extends 'base.html' %}
 
 {% block content %}
-{% if cart.products.exists %}
-    <h1>Cart</h1>
-    <table class="table table-dark" id="cart-table">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Название</th>
-      <th scope="col">Цена</th>
-    </tr>
-  </thead>
-  <tbody class="cart-body">
-  {% for product in cart.products.all %}
-    <tr class="cart-product">
-      <th scope="row">{{ forloop.counter }}</th>
-      <td><a href="{{ product.get_absolute_url }}">{{ product.title }}</a>
-          {% include 'cart/snippets/remove-product.html' with product_id=product.id %}
-      </td>
+    <div class="container">
 
-      <td>{{ product.price }}</td>
-    </tr>
-  {% endfor %}
-    <tr>
-      <td colspan="2"></td>
-      <td><b>Сумма</b> <span class="cart-total">{{ cart.total }}</span></td>
-    </tr>
-    <tr>
-      <td colspan="2"></td>
-      <td><a class="btn btn-block btn-success" href="{% url 'cart:checkout' %}">Оформить заказ</a></td>
-    </tr>
-  </tbody>
-</table>
-    <div class="cart-item-remove-form" style="display: none">
-        {% include 'cart/snippets/remove-product.html' %}
-    </div>
-{% else %}
-    <p class="lead">Cart is empty</p>
-{% endif %}
+            <h1>Корзина</h1>
+            {% if cart.products.exists %}
+                <div class="card">
+                    <div class="table-responsive">
+
+                        <table class="table table-bordered table-light" id="cart-table" style="background-color: ghostwhite;">
+                      <thead>
+                        <tr>
+                          <th scope="col">#</th>
+                          <th scope="col">Название</th>
+                          <th scope="col">Цена</th>
+                        </tr>
+                      </thead>
+                      <tbody class="cart-body">
+                      {% for product in cart.products.all %}
+                        <tr class="cart-product">
+                          <th scope="row">{{ forloop.counter }}</th>
+                          <td><a href="{{ product.get_absolute_url }}">{{ product.title }}</a>
+                              {% include 'cart/snippets/remove-product.html' with product_id=product.id %}
+                          </td>
+
+                          <td>{{ product.price }}</td>
+                        </tr>
+                      {% endfor %}
+                        <tr>
+                          <td colspan="2"></td>
+                          <td><b>Сумма</b> <span class="cart-total">{{ cart.total }}</span></td>
+                        </tr>
+                        <tr>
+                          <td colspan="2"></td>
+                          <td><a class="btn btn-block btn-success" href="{% url 'cart:checkout' %}">Оформить заказ</a></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                        <div class="cart-item-remove-form" style="display: none">
+                            {% include 'cart/snippets/remove-product.html' %}
+                        </div>
+                    {% else %}
+                        <p class="lead">Cart is empty</p>
+                    {% endif %}
+        </div>
+
 {% endblock %}

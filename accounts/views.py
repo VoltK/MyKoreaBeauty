@@ -108,7 +108,6 @@ class GuestRegisterView(NextUrlMixin, FormView):
         return redirect(self.get_next_url())
 
 
-
 class LoginView(FormView):
     form_class = LoginForm
     success_url = '/products/'

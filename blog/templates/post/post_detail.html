@@ -1,22 +1,26 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <div class="row">
+  <article>
 
-           <div class="col-md-6 offset-md-3">
+    <div class="container">
 
-                <div class="jumbotron">
-                    <h1 class="display-5">{{ post.title }}</h1><br>
-                    {% if post.picture %}
-                        <img src="{{ post.picture.url}}" style="height: 280px; width: 440px; margin-left: 100px">
+        <div class="row">
+
+            <div class="col-lg-8 col-md-10 mx-auto">
+                {% if post.picture %}
+                        <img class="img-fluid" src="{{ post.picture.url}}">
                     {% endif %}
-                   <hr class="my-4">
-                   <p class="lead">{{ post.information|linebreaks }}</p>
-                    Добавлено: {{ post.timestamp|date:"SHORT_DATE_FORMAT" }}
-                </div>
+                <h1 class="display-5 text-center">{{ post.title }}</h1><br>
 
-           </div>
+                <p class="lead">{{ post.information }}</p>
+                <hr>
+                Добавлено: {{ post.timestamp|date:"SHORT_DATE_FORMAT" }}
+            </div>
 
+
+        </div>
     </div>
+  </article>
 
 {% endblock %}

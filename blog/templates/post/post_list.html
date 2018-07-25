@@ -4,60 +4,80 @@
 
 {% block content %}
 
+   <div class="container pt-5">
+
+        <!--Grid row-->
             <div class="row">
-            {% for post in object_list %}
-                <div class="col-12 col-sm-6 col-md-4 col-lg-4">
-                    {% include 'snippets/card_for_post.html' with instance=post %}
+
+
+                <div class="col-12 col-md-4 сol-lg-4">
+                    <div class="card my-4">
+                        <h5 class="card-header">Категории</h5>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <ul class="navbar-nav mr-auto">
+                                    <li class="nav-item {% if not category %}active{% endif %}" >
+                                      <a class="nav-link" href="{% url 'blog:post_list' %}">Все</a>
+                                    </li>
+                                  {% for c in categories %}
+                                    <li class="nav-item {% if category.slug == c.slug %}active{% endif %}">
+                                      <a class="nav-link" href="{{ c.get_absolute_url }}">{{ c.title }}</a>
+                                    </li>
+                                  {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    </div>
                 </div>
-            {% endfor %}
+                <div class="col-md-8 ">
+
+                      <!--Grid column-->
+                        {% for post in posts %}
+                                {% include 'snippets/card_for_post.html' with instance=post %}
+                        {% endfor %}
+                </div>
             </div>
+   </div>
+
 
         <!-- От сюда идет pagination -->
-
-    {% if is_paginated %}
+    {%  if posts.has_other_pages  %}
         <hr>
-        <nav aria-label="Page navigation example">
-            <ul class="pagination justify-content-center pagination-sm">
-                {% if page_obj.has_previous %}
-                  <!-- If it ain't a search result display, don't append the search query
-                       to the URL. -->
-                  {% if not search %}
-                  <li class="page-item">
-                      <a class="page-link" href="{% url 'blog:post_list' %}?page={{ page_obj.previous_page_number }}" tabindex="-1">Предыдущая</a>
-                  </li>
-                  {% else %}
-                  <!-- Append the searched query to the URL, so that on a search results page,
-                       the pagination don't revert to listing all the listview items. -->
-                    <li class="page-item">
-                      <a class="page-link" href="{% url 'blog:post_list' %}?{{search}}&page={{ page_obj.previous_page_number }}" tabindex="-1">Предыдущая</a>
-                  </li>
-                  {% endif %}
-                {% else %}
-                <li class="page-item disabled">
-                    <a class="page-link" href="#" tabindex="-1">Предыдущая</a>
-                </li>
-                {% endif %}
-                {% for object in page_obj.paginator.page_range %}
-                    <li class="page-item"><a class="page-link" href="{% url 'blog:post_list' %}?page={{ forloop.counter }}">{{ forloop.counter }}</a></li>
-                {% endfor %}
-                {% if page_obj.has_next %}
-                  {% if not search %}
-                  <li class="page-item">
-                      <a class="page-link" href="{% url 'blog:post_list' %}?page={{ page_obj.next_page_number }}">Следующая</a>
-                  </li>
-                  {% else %}
-                    <li class="page-item">
-                      <a class="page-link" href="{% url 'blog:post_list' %}?{{search}}&page={{ page_obj.next_page_number }}">Следующая</a>
-                  </li>
-                  {% endif %}
-                {% else %}
-                <li class="page-item disabled">
-                    <a class="page-link" href="#">Следующая</a>
-                </li>
-                {% endif %}
+        <nav class="d-flex justify-content-center wow fadeIn" aria-label="Page navigation">
+            <ul class="pagination pg-blue">
+                {% if posts.has_previous %}
+                   <li class="page-item">
+                        <a class="page-link" href="?page={{ posts.previous_page_number }}">Предыдущая</a>
+                    </li>
+                    {% else %}
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#">Предыдущая</a>
+                    </li>
+                    {% endif %}
+                    {% for i in posts.paginator.page_range %}
+                        {% if posts.number == i %}
+                        <li class="page-item active">
+                            <a class="page-link" href="?page={{ forloop.counter }}">{{ forloop.counter }}</a>
+                        </li>
+                        {% else %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ forloop.counter }}">{{ forloop.counter }}</a>
+                        </li>
+                        {% endif %}
+                    {% endfor %}
+                    {% if posts.has_next %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ posts.next_page_number }}">Следующая</a>
+                        </li>
+                    {% else %}
+                         <li class="page-item disabled">
+                             <a class="page-link" href="#">Следующая</a>
+                         </li>
+                    {% endif %}
             </ul>
         </nav>
-        {% endif %}
-
-
+    {% endif %}
 {% endblock %}

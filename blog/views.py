@@ -1,7 +1,36 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import Http404
 from django.views.generic import ListView, DetailView
-from .models import Post
+from .models import Post, Category
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+
+
+def post_list(request, category_slug=None):
+    category = None
+    categories = Category.objects.all()
+    posts = Post.objects.all()
+    if category_slug:
+        category = get_object_or_404(Category, slug=category_slug)
+        posts = Post.objects.filter(category=category)
+
+    # pagination
+    page = request.GET.get('page', 1)
+    paginator = Paginator(posts, 3)
+
+    try:
+        pag_post = paginator.page(page)
+    except PageNotAnInteger:
+        pag_post = paginator.page(1)
+    except EmptyPage:
+        pag_post = paginator.page(paginator.num_pages)
+    # конец pagination
+
+    context = {
+        'category': category,
+        'categories': categories,
+        'posts': pag_post,
+    }
+    return render(request, 'post/post_list.html', context)
 
 
 class PostListView(ListView):

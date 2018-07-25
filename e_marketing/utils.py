@@ -11,7 +11,7 @@ MAILCHIMP_EMAIL_LIST_ID = getattr(settings, "MAILCHIMP_EMAIL_LIST_ID", None)
 
 def check_email(email):
     if not re.match(r".+@.+\..+", email):
-        raise ValueError('String passed is not a valid email address')
+        raise ValueError('Вы ввели недействительный email адрес')
     return email
 
 

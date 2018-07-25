@@ -60,8 +60,12 @@ class Order(models.Model):
 
     objects = OrderManager()
 
+    class Meta:
+        verbose_name = 'Заказ'
+        verbose_name_plural = 'Заказы'
+
     def get_absolute_url(self):
-        reverse('orders:detail', kwargs={'order_id', self.order_id})
+        return reverse("orders:order_details", kwargs={'order_id': self.order_id})
 
     def update_total(self):
         cart_total = self.cart.total

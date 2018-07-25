@@ -1,18 +1,43 @@
 
-{#<div class="card-deck">#}
-    <div class="card border-info mb-3" style="width: 18rem;">
+    <div class="card">
+
+    <!-- Картинка -->
       {% if instance.image %}
-          <a href="{{ instance.get_absolute_url }}">
-            <img class="card-img-top" src="{{ instance.image.url }}" alt="{{ instance.title }} logo ">
-          </a>
+          <div class="view overlay">
+              <a href="{{ instance.get_absolute_url }}">
+                    <img class="card-img-top" src="{{ instance.image.url }}" alt="{{ instance.title }} logo ">
+              </a>
+          </div>
       {% endif %}
-        <div class="card-body">
-        <h5 class="card-title">{{ instance.title }}</h5>
-        <p class="card-text">{{ instance.description| truncatewords:14}}</p>
-        <a href="{{ instance.get_absolute_url }}" class="btn btn-primary">Подробнее</a>
+    <!-- Конец картинки -->
+
+        <div class="card-body text-center">
+            <!--Category & Title-->
+                <a href="" class="grey-text">
+                  <h5>{{ instance.category }}</h5>
+                </a>
+                <h5>
+                  <strong>
+                    <a href="{{ instance.get_absolute_url }}" class="dark-grey-text">{{ instance.title }}
+                    </a>
+                  </strong>
+                </h5>
+
+                <h4 class="font-weight-bold blue-text">
+                  <strong>{{ instance.price }} ₴</strong>
+                </h4>
             {% include 'snippets/cart_update.html' with product=instance cart=cart %}
+        </div>
+    </div>
+
+
+
+
+{# <h5 class="card-title">{{ instance.title }}</h5> #}
+{# <p class="card-text">{{ instance.description| truncatewords:14 }}</p>  #}
+{#        <a href="{{ instance.get_absolute_url }}" class="btn btn-primary">Подробнее</a> #}
+
 {#            <a href="{% url 'detail' %}" class="btn btn-warning">Подробнее</a>#}
 
-      </div>
-    </div>
+
 {#</div>#}

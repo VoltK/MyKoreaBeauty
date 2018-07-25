@@ -1,24 +1,70 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <div class="row ">
-           <div class="col-4">
-               <h1>{{ product.title }}</h1><br>
-               Добавлено: {{ product.timestamp|date:"SHORT_DATE_FORMAT" }} <br>
-               {{ product.price }}<br>
+     <main class="mt-5 pt-4">
 
-           </div>
-           <div class="col-4">
-            {% if product.image %}
-                <img src="{{ product.image.url}}">
-            {% endif %}
-           </div>
-            <div class="col-4">
-            <p>{{ product.description|linebreaks }}</p>
-           </div>
-        <div class="col-12 col-md-6">
-            {% include 'snippets/cart_update.html' with product=object cart=cart %}
+        <div class="container dark-grey-text mt-5">
+
+              <!--Grid row-->
+              <div class="row wow fadeIn">
+
+                <!--Grid column и картинка-->
+                <div class="col-lg-6 col-md-6 mb-4">
+                    {% if product.image %}
+                    <img src="{{ product.image.url }}" alt="{{ product.title }}" class="img-fluid">
+                    {% endif %}
+                </div>
+
+                  <!--Grid column-->
+                <div class="col-lg-6 col-md-6 mb-4">
+
+                  <!--Content-->
+                  <div class="p-4">
+
+                        <div class="mb-3">
+                            <a href="">
+                                <span class="badge purple mr-1">{{ product.category }}</span>
+                            </a>
+                            <a href="">
+                                <span class="badge purple mr-1">{{ product.status }}</span>
+                            </a>
+                        </div>
+
+                      <p class="lead">
+                          {% if product.sale_price > 0 %}
+                          <span class="mr-1">
+                            <del>{{ product.price }}</del>
+                          </span>
+                          <span>{{ product.sale_price }}</span>
+                          {% else %}
+                          <span>{{ product.price }}</span>
+                          {% endif %}
+                      </p>
+
+                      <p class="lead font-weight-bold">Описание</p>
+
+                      <p class="lead">{{ product.description }}</p>
+
+                      <div class="d-flex justify-content-left">
+                          {% include 'snippets/cart_update.html' with product=object cart=cart %}
+                      </div>
+
+                  </div>
+                </div>
+              </div>
         </div>
-    </div>
+     </main>
+
+
+
+{#<h1>{{ product.title }}</h1><br>#}
+                      {#Добавлено: {{ product.timestamp|date:"SHORT_DATE_FORMAT" }} <br>#}
+                      {#               {{ product.price }}<br> #}
+
+
+
+
+            {# <p>{{ product.description|linebreaks }}</p> #}
+
 
 {% endblock %}

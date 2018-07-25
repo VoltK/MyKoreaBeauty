@@ -72,6 +72,10 @@ class Cart(models.Model):
 
     objects = CartManager()
 
+    class Meta:
+        verbose_name = 'корзина'
+        verbose_name_plural = 'Корзины'
+
     def __str__(self):
         return str(self.id)
 

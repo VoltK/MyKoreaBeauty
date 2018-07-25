@@ -25,6 +25,24 @@ def upload_image_path(instance, filename):
     )
 
 
+class Category(models.Model):
+    title = models.CharField(max_length=150, db_index=True)
+    slug = models.SlugField(blank=True, unique=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ('title',)
+        verbose_name = 'категория'
+        verbose_name_plural = 'категории'
+
+    def __str__(self):
+        return self.title
+
+    def get_absolute_url(self):
+        return reverse('product:list_by_category', args=[self.slug])
+
+
 class ProductQuerySet(models.query.QuerySet):
 
     def active(self):
@@ -62,20 +80,28 @@ class ProductManager(models.Manager):
 
 
 class Product(models.Model):
+    category = models.ForeignKey(Category, related_name='products', on_delete=models.CASCADE)
     title       = models.CharField(max_length=120)
     slug        = models.SlugField(blank=True, unique=True)
     description = models.TextField(null=True)
     price       = models.DecimalField(max_digits=20, decimal_places=2, default=49.99)
+    sale_price  = models.DecimalField(max_digits=20, decimal_places=2, default=0)
     image       = models.ImageField(upload_to=upload_image_path, null=True, blank=True)
-    featured    = models.BooleanField(default=False)
     active      = models.BooleanField(default=True)
     timestamp   = models.DateTimeField(auto_now_add=True)
+    status      = models.CharField(max_length=120, blank=True, null=True)
 
     objects = ProductManager()
 
+    class Meta:
+        ordering = ('title',)
+        index_together = (('id', 'slug'),)
+        verbose_name = 'продукт'
+        verbose_name_plural = 'продукты'
+
     def get_absolute_url(self):
         #return "/products/{slug}/".format(slug=self.slug)
-        return reverse('products:detail', kwargs={'slug': self.slug})
+        return reverse('product:detail', args=[self.id, self.slug])
 
     def __str__(self):
         return self.title
@@ -87,3 +113,11 @@ def product_pre_save_receiver(sender, instance, *args, **kwargs):
 
 
 pre_save.connect(product_pre_save_receiver, sender=Product)
+
+
+def category_pre_save_receiver(sender, instance, *args, **kwargs):
+    if not instance.slug:
+        instance.slug = unique_slug_generator(instance)
+
+
+pre_save.connect(category_pre_save_receiver, sender=Category)

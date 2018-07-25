@@ -2,8 +2,12 @@
 {% block content %}
 <div class="container">
     <div class="text-center">
-        <h1>Тут будет информация о нас</h1>
-        <h2>А тут будут наши контакты</h2>
+        <h1>Контакты</h1>
+        <ul>
+            <li>Tелефон: +380...</li>
+            <li>Email: mykorea@...</li>
+        </ul>
+        <h2>Ваши пожелания</h2>
     </div>
     <div class="col-2-md ">
         <form class="contact-form" method="post" action="{% url 'contact' %}"> {% csrf_token %}

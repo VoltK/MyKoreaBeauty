@@ -28,7 +28,7 @@ from e_marketing.views import MailchimpWebhookView
 
 
 urlpatterns = [
-    url(r'^$', home_page, name='home'),
+    url(r'', include('products.urls', namespace='product')),
     url(r'^about/$', about_page, name='about'),
     url(r'^contact/$', contact_page, name='contact'),
     # редирект на кастомную url
@@ -40,7 +40,6 @@ urlpatterns = [
     url(r'^register/guest/$', GuestRegisterView.as_view(), name='guest_register'),
     url(r'^logout/$', LogoutView.as_view(next_page=reverse_lazy('login')), name='logout'),
     url(r'^register/$', RegisterView.as_view(), name='register'),
-    url(r'^products/', include('products.urls', namespace='products')),
     url(r'^search/', include('search.urls', namespace='search')),
     url(r'^orders/', include('orders.urls', namespace='orders')),
     url(r'^cart/', include('cart.urls', namespace='cart')),

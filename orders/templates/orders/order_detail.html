@@ -1,18 +1,27 @@
 {% extends "base.html" %}
 
 {% block content %}
+    <div class="container">
+            <div class="row">
 
-                <h1>Заказ {{ object.order_id }}</h1>
-                <hr>
-                <p>Продукты: {% for product in order.cart.products.all %}{{ product }}
-                    {% if not forloop.last %},
-                    {% endif %}
-                {% endfor %}
-                </p>
-                <p>Адрес доставки: {{ order.shipping_address.get_address }}</p>
-                <p>Стоимость товаров: {{ order.cart.total }}</p>
-                <p>Стоимость доставки: {{ order.shipping_total }}</p>
-                <p>К оплате: {{ order.total }}</p>
+                <div class="col-lg-8 col-md-10 mx-auto">
+
+                    <h1 class="text-center">Заказ {{ object.order_id }}</h1>
+                    <hr>
+                    <p>Продукты: {% for product in order.cart.products.all %}{{ product }}
+                        {% if not forloop.last %},
+                        {% endif %}
+                    {% endfor %}
+                    </p>
+                    <p>Адрес доставки: {{ order.shipping_address.get_address }}</p>
+                    <p>Стоимость товаров: {{ order.cart.total }}</p>
+                    <p>Стоимость доставки: {{ order.shipping_total }}</p>
+                    <p>К оплате: {{ order.total }}</p>
+
+                </div>
+            </div>
+
+    </div>
 
 
 {% endblock %}
