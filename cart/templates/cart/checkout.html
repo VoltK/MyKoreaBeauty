@@ -43,8 +43,8 @@
         </div>
         {% else %}
             <div class='row'>
-                <div class='col-md-6 mx-auto col-10'>
-                <h1>Оформление заказа</h1>
+                <div class='col-md-6 mx-auto col-10 '>
+                <h1 class="text-center">Оформление заказа</h1>
                 <hr>
                 <p>Продукты: {% for product in order.cart.products.all %}{{ product }}
                     {% if not forloop.last %},
@@ -55,8 +55,8 @@
                 <p>Стоимость товаров: {{ order.cart.total }}</p>
                 <p>Стоимость доставки: {{ order.shipping_total }}</p>
                 <p>К оплате: {{ order.total }}</p>
-                <form class='form' method='POST' action="">{% csrf_token %}
-                    <button type='submit' class="btn btn-success">Подтвердить</button>
+                <form class='form text-center' method='POST' action="">{% csrf_token %}
+                    <button type='submit' class="btn btn-success ">Подтвердить</button>
                 </form>
                 </div>
             </div>
