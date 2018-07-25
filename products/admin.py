@@ -15,8 +15,8 @@ admin.site.register(Category, CategoryAdmin)
 
 
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ['__str__', 'price', "slug", 'id']
-    search_fields = ['title']
+    list_display = ['__str__', 'price', 'category', "slug", 'id']
+    search_fields = ['title', 'category']
 
     class Meta:
         model = Product
