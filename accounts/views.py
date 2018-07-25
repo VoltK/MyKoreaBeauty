@@ -110,7 +110,7 @@ class GuestRegisterView(NextUrlMixin, FormView):
 
 class LoginView(FormView):
     form_class = LoginForm
-    success_url = '/products/'
+    success_url = 'product:list'
     template_name = 'auth/login.html'
 
     def get_form_kwargs(self):
@@ -127,7 +127,7 @@ class LoginView(FormView):
         if is_safe_url(redirect_path, request.get_host()):
             return redirect_path
         else:
-            return '/products/'
+            return 'product:list'
 
     def form_valid(self, form):
             next_path = self.get_next_url()
