@@ -5,92 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7d147a47-32a2-4980-80a9-4ffdc5a969f8" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/static_cdn/css_custom/bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_cdn/css_custom/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_cdn/css_custom/mdb.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_cdn/css_custom/mdb.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_cdn/css_custom/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_cdn/css_custom/style.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_cdn/font/roboto/Roboto-Bold.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_cdn/font/roboto/Roboto-Bold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_cdn/font/roboto/Roboto-Bold.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_cdn/font/roboto/Roboto-Bold.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_cdn/font/roboto/Roboto-Light.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_cdn/font/roboto/Roboto-Light.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_cdn/font/roboto/Roboto-Light.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_cdn/font/roboto/Roboto-Light.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_cdn/font/roboto/Roboto-Medium.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_cdn/font/roboto/Roboto-Medium.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_cdn/font/roboto/Roboto-Medium.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_cdn/font/roboto/Roboto-Medium.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_cdn/font/roboto/Roboto-Regular.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_cdn/font/roboto/Roboto-Regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_cdn/font/roboto/Roboto-Regular.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_cdn/font/roboto/Roboto-Regular.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_cdn/font/roboto/Roboto-Thin.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_cdn/font/roboto/Roboto-Thin.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_cdn/font/roboto/Roboto-Thin.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_cdn/font/roboto/Roboto-Thin.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_my_proj/css_custom/bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_my_proj/css_custom/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_my_proj/css_custom/mdb.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_my_proj/css_custom/mdb.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_my_proj/css_custom/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_my_proj/css_custom/style.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_my_proj/font/roboto/Roboto-Bold.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_my_proj/font/roboto/Roboto-Bold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_my_proj/font/roboto/Roboto-Bold.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_my_proj/font/roboto/Roboto-Bold.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_my_proj/font/roboto/Roboto-Light.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_my_proj/font/roboto/Roboto-Light.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_my_proj/font/roboto/Roboto-Light.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_my_proj/font/roboto/Roboto-Light.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_my_proj/font/roboto/Roboto-Medium.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_my_proj/font/roboto/Roboto-Medium.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_my_proj/font/roboto/Roboto-Medium.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_my_proj/font/roboto/Roboto-Medium.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_my_proj/font/roboto/Roboto-Regular.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_my_proj/font/roboto/Roboto-Regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_my_proj/font/roboto/Roboto-Regular.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_my_proj/font/roboto/Roboto-Regular.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_my_proj/font/roboto/Roboto-Thin.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_my_proj/font/roboto/Roboto-Thin.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_my_proj/font/roboto/Roboto-Thin.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_my_proj/font/roboto/Roboto-Thin.woff2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addresses/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/addresses/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addresses/templates/addresses/prev_addresses.html" beforeDir="false" afterPath="$PROJECT_DIR$/addresses/templates/addresses/prev_addresses.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/templates/post/post_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/post/post_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/templates/post/post_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/post/post_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/templates/snippets/card_for_post.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/snippets/card_for_post.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/cart/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart/templates/cart/checkout.html" beforeDir="false" afterPath="$PROJECT_DIR$/cart/templates/cart/checkout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart/templates/cart/checkout_done.html" beforeDir="false" afterPath="$PROJECT_DIR$/cart/templates/cart/checkout_done.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart/templates/cart/home_cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/cart/templates/cart/home_cart.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db1.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db1.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/e_marketing/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/e_marketing/utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_korea/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_korea/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/templates/orders/order_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/orders/templates/orders/order_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/templates/orders/order_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/orders/templates/orders/order_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/templates/products/details.html" beforeDir="false" afterPath="$PROJECT_DIR$/products/templates/products/details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/templates/products/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/products/templates/products/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/templates/snippets/card.html" beforeDir="false" afterPath="$PROJECT_DIR$/products/templates/snippets/card.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static_cdn/img/korean_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static_cdn/img/korean_style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static_my_proj/img/korean_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static_my_proj/img/korean_style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base/css.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base/css.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base/navbar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/contact.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -159,8 +74,8 @@
       <file leaf-file-name="contact.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/contact.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
+            <state relative-caret-position="140">
+              <caret line="7" selection-start-line="7" selection-end-line="8" />
             </state>
           </provider>
         </entry>
@@ -460,7 +375,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32914287" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.09731544" side_tool="true" weight="0.3495702" />
@@ -468,8 +382,8 @@
       <window_info anchor="bottom" id="Version Control" order="12" weight="0.3295129" />
       <window_info anchor="bottom" id="Python Console" order="9" weight="0.32914287" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.90268457" visible="true" weight="0.34240687" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49317408" visible="true" weight="0.25973153" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.90268457" visible="true" weight="0.34240687" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49317408" visible="true" weight="0.25973153" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" weight="0.3295302" />
       <window_info anchor="right" id="SciView" order="4" />
@@ -867,8 +781,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/contact.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
+        <state relative-caret-position="140">
+          <caret line="7" selection-start-line="7" selection-end-line="8" />
         </state>
       </provider>
     </entry>
