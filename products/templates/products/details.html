@@ -21,7 +21,7 @@
                   <!--Content-->
                   <div class="p-4">
 
-                        <div class="mb-3">
+                        <div class="text-center mb-3">
                             <a href="">
                                 <span class="badge purple mr-1">{{ product.category }}</span>
                             </a>
@@ -29,7 +29,7 @@
                                 <span class="badge purple mr-1">{{ product.status }}</span>
                             </a>
                         </div>
-
+                  <div class="text-center">
                       <p class="lead">
                           {% if product.sale_price > 0 %}
                           <span class="mr-1">
@@ -41,13 +41,15 @@
                           {% endif %}
                       </p>
 
+                      {% include 'snippets/cart_update.html' with product=object cart=cart %}
+                  </div>
+
+
                       <p class="lead font-weight-bold">Описание</p>
 
                       <p class="lead">{{ product.description }}</p>
 
-                      <div class="d-flex justify-content-left">
-                          {% include 'snippets/cart_update.html' with product=object cart=cart %}
-                      </div>
+
 
                   </div>
                 </div>

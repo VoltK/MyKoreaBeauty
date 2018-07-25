@@ -8,7 +8,7 @@
 
 
         <nav class="navbar navbar-expand-md navbar-light mb-3" style="background-color: ghostwhite;">
-          <a class="navbar-brand" href="{{ prod_list_url }}">mykorea_beauty</a>
+            <a class="navbar-brand" href="{{ prod_list_url }}"><h2 style="font-family: Verdana, Arial, Helvetica, sans-serif;">My Korea Beauty</h2></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -16,14 +16,14 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
               <li class="nav-item {% if request.path == prod_list_url %}active{% endif %}">
-                <a class="nav-link" href="{{ prod_list_url }}">Косметика<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="{{ prod_list_url }}" style="font-family: Verdana, Arial, Helvetica, sans-serif;">Косметика<span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item {% if request.path == blog %}active{% endif %}">
-                <a class="nav-link" href="{{ blog }}">Блог</a>
+                <a class="nav-link" href="{{ blog }}" style="font-family: Verdana, Arial, Helvetica, sans-serif;">Блог</a>
               </li>
 
               <li class="nav-item {% if request.path == about_us %}active{% endif %}">
-                <a class="nav-link" href="{% url 'contact' %}">Связаться с нами</a>
+                <a class="nav-link" href="{% url 'contact' %}" style="font-family: Verdana, Arial, Helvetica, sans-serif;">Связаться с нами</a>
               </li>
               <li>
                   <form class="form-inline my-2 my-lg-0 search-form" method="get" action="{% url 'search:query' %}">
@@ -40,17 +40,17 @@
                 </li>
                 {% if request.user.is_authenticated %}
                     <li class="nav-item order-2 order-md-1 {% if request.path == account_url %}active{% endif %}">
-                        <a href="{{ account_url }}" class="nav-link"><i class="fas fa-user" style="margin-right: 5px"></i>Профиль</a>
+                        <a href="{{ account_url }}" class="nav-link" style="font-family: Verdana, Arial, Helvetica, sans-serif;"><i class="fas fa-user" style="margin-right: 5px"></i>Профиль</a>
                     </li>
                 <li class="nav-item order-2 order-md-1">
-                    <a href="{% url 'logout' %}" class="nav-link"><i class="fas fa-power-off" style="margin-right: 5px"></i>Выйти</a>
+                    <a href="{% url 'logout' %}" class="nav-link" style="font-family: Verdana, Arial, Helvetica, sans-serif;"><i class="fas fa-power-off" style="margin-right: 5px; "></i>Выйти</a>
                 </li>
                 {% else %}
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'register' %}">Регистрация</a>
+                    <a class="nav-link" href="{% url 'register' %}" style="font-family: Verdana, Arial, Helvetica, sans-serif;">Регистрация</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'login' %}">Войти</a>
+                    <a class="nav-link" href="{% url 'login' %}" style="font-family: Verdana, Arial, Helvetica, sans-serif;">Войти</a>
                 {% endif %}
             </ul>
           </div>
